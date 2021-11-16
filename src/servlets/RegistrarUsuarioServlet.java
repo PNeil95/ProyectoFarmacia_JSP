@@ -36,6 +36,14 @@ public class RegistrarUsuarioServlet extends HttpServlet {
 		String clave = request.getParameter("txtClave");
 		String fechanac = request.getParameter("txtFecha");
 		
+		if(!nombre.matches("[A-Za-zñÑáéíóú]+( [A-Za-zñÑáéíóú]+)*")) 
+		{
+			request.setAttribute("mensaje", "Nombre no válido");
+			request.getRequestDispatcher("registro.jsp").forward(request, response);;
+			return;
+		}
+		
+		
 		
 		//Procesos  --> Registrar en la Base de Datos
 		Usuario u = new Usuario( nombre, apellido, usuario, clave, fechanac);

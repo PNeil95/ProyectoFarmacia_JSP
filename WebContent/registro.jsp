@@ -20,24 +20,24 @@
 			<div class="form-row">
 				<div class="form-group col-md-6">
 					<label for="inputNombre">Nombre</label>
-					<input type="text" class="form-control" id="inputNombre" name="txtNombre" placeholder="Ingrese su nombre">
+					<input type="text" class="form-control" id="inputNombre" name="txtNombre" required placeholder="Ingrese su nombre">
 				</div>
 				
 				<div class="form-group col-md-6">
 					<label for="inputApellido">Apellido</label>
-					<input class="form-control" id="inputApellido" name="txtApellido" placeholder="Ingrese su apellido">
+					<input type="text"class="form-control" id="inputApellido" name="txtApellido" required placeholder="Ingrese su apellido">
 				</div>
 			</div>
 			
 			<div class="form-row">
 				<div class="form-group col-md-8">
 					<label for="inputUsuario">Usuario</label>
-					<input type="text" class="form-control" id="inputUsuario" name="txtUsuario" placeholder="Ingrese su correo">
+					<input type="text" class="form-control" id="inputUsuario" name="txtUsuario" required placeholder="Ingrese su correo">
 				</div>
 				
 				<div class="form-group col-md-4">
 					<label for="inputContraseña">Contraseña</label>
-					<input type="password" class="form-control" id="inputContraseña" name="txtClave" placeholder="Ingrese su contraseña">
+					<input type="password" class="form-control" id="inputContraseña" name="txtClave" maxlength="5" required placeholder="Ingrese su contraseña">
 				</div>
 			</div>
 			
@@ -48,6 +48,7 @@
 			<button type="submit" class="btn btn-primary">Registrar</button>
 
 		</form>
+		<br>
 		<p>Si ya tiene cuenta, Ingrese <a href="login.jsp">aquí</a></p>
 		${mensaje}
 	</div>
