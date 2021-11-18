@@ -1,4 +1,6 @@
 
+<%@page import="model.Producto"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%
@@ -33,10 +35,10 @@
 				
 
 				<div class="container">
-					<h1>Listado de</h1>
+					<h1>Listado de Productos</h1>
 
-					<a class="btn btn-primary" href="#">Ver data</a> <a
-						class="btn btn-primary" href="#">Registra</a>
+					<a class="btn btn-primary" href="crudprod?opcion=l">Ver data</a> 
+					<a class="btn btn-primary" href="#">Registra</a>
 				</div>
 
 				<br> <br>
@@ -47,12 +49,28 @@
 						<tr>
 							<th>Id</th>
 							<th>Nombre</th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
+							<th>Stock</th>
+							<th>Precio</th>
+							<th>Categoria</th>
+							<th>Estado</th>
 						</tr>
-
+						<%
+							//Capturar el listado enviado desde el servlet (Atributo)
+							ArrayList<Producto> lstProductos = (ArrayList<Producto>)request.getAttribute("lstProductos");
+							if(lstProductos != null)
+							{
+								for(Producto p: lstProductos)
+								{%>
+									<tr class="grilla_campo">
+									<td><%=p.getIdprod()%></td>
+									<td><%=p.getDescripcion()%></td>
+									<td><%=p.getStock()%></td>
+									<td><%=p.getPrecio()%></td>
+									<td></td>
+									<td></td>
+								<% }	
+							}
+						%>
 						<tr class="grilla_campo">
 							<td>AAAA</td>
 							<td>BBBB</td>
@@ -67,7 +85,9 @@
 				</div>
 			</section>
 		</main>
-		<footer> </footer>
+		<footer> 
+		
+		</footer>
 	</div>
 
 </body>
