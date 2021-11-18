@@ -34,27 +34,27 @@
 				<form action="crudprod" title="Registro al Sistema">
 					<div class="form-row">
 						<div class="form-group col-md-6">
-							<label for="inputNombre">Codigo del Producto</label> <input
+							<label for="inputNombre">Codigo del Producto</label> <input value="${p.idprod}"
 								type="text" class="form-control" id="inputCodigo"
 								name="txtCodigo" required placeholder="Ingrese su código">
 						</div>
 
 						<div class="form-group col-md-6">
-							<label for="inputApellido">Descripción</label> <input type="text"
-								class="form-control" id="inputDescripcion" name="txtDescripcion"
+							<label for="inputApellido">Descripción</label> <input value="${p.descripcion}" 
+							type="text" class="form-control" id="inputDescripcion" name="txtDescripcion"
 								required placeholder="Ingrese su apellido">
 						</div>
 					</div>
 
 					<div class="form-row">
 						<div class="form-group col-md-8">
-							<label for="inputUsuario">Stock</label> <input type="number"
+							<label for="inputUsuario">Stock</label> <input value="${p.stock}" type="number"
 								class="form-control" id="inputStock" name="txtStock" min="1"
 								required placeholder="0">
 						</div>
 
 						<div class="form-group col-md-4">
-							<label for="inputContraseña">Precio</label> <input type="number"
+							<label for="inputContraseña">Precio</label> <input value="${p.precio}" type="number"
 								class="form-control" id="inputPrecio" name="txtPrecio" min="1"
 								required placeholder="0.00">
 						</div>

@@ -47,6 +47,7 @@
 					<table class="table">
 
 						<tr>
+							<th>Producto</th>
 							<th>Id</th>
 							<th>Nombre</th>
 							<th>Stock</th>
@@ -62,12 +63,15 @@
 								for(Producto p: lstProductos)
 								{%>
 									<tr class="grilla_campo">
+									<td><img alt="" src="img/productos/<%=p.getIdprod()%>.png" width="100px"></td>
 									<td><%=p.getIdprod()%></td>
 									<td><%=p.getDescripcion()%></td>
 									<td><%=p.getStock()%></td>
 									<td><%=p.getPrecio()%></td>
+									<td>
+										<a href="crudprod?opcion=q&cod=<%=p.getIdprod()%>"><img alt="" src="img/lupa.png"></td></a>
 									<td></td>
-									<td></td>
+									</tr>
 								<% }	
 							}
 						%>

@@ -7,7 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import mantenimientos.GestionUsuario;
+import dao.DAOFactory;
+import mantenimientos.GestionUsuarioMySQL;
 import model.Usuario;
 
 /**
@@ -48,8 +49,13 @@ public class RegistrarUsuarioServlet extends HttpServlet {
 		//Procesos  --> Registrar en la Base de Datos
 		Usuario u = new Usuario( nombre, apellido, usuario, clave, fechanac);
 		//a.Por eso Instancio mi mantenimiento
-		GestionUsuario gu = new GestionUsuario();
-		int ok = gu.registrar(u);
+		//GestionUsuarioMySQL gu = new GestionUsuarioMySQL();
+		
+		//Con Patron DAO
+		DAOFactory fabrica = DAOFactory.getDAOFactory(DAOFactory.MYSQL);
+		int ok = fabrica.getUsuarioDAO().registrar(u);
+		
+		//int ok = gu.registrar(u);
 		
 		if(ok==0){
 			mensaje = "Error al registrar";
